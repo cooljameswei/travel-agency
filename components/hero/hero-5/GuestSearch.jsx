@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 const counters = [
   { name: "Adults", defaultValue: 2 },
-  { name: "Children", defaultValue: 1 },
-  { name: "Rooms", defaultValue: 1 },
+  { name: "Children", defaultValue: 0 }
 ];
+
+let popupShowed = false
 
 const Counter = ({ name, defaultValue, onCounterChange }) => {
   const [count, setCount] = useState(defaultValue);
   const incrementCount = () => {
-    setCount(count + 1);
-    onCounterChange(name, count + 1);
+    const lastPopupShowed = popupShowed
+    if(count < 2){
+      popupShowed = true
+      setCount(count + 1);
+      onCounterChange(name, count + 1);
+    }
+    if(popupShowed && !lastPopupShowed){
+      alert("Limited availability for children")
+    }
   };
   const decrementCount = () => {
     if (count > 0) {
@@ -24,7 +32,7 @@ const Counter = ({ name, defaultValue, onCounterChange }) => {
         <div className="col-auto">
           <div className="text-15 lh-12 fw-500">{name}</div>
           {name === "Children" && (
-            <div className="text-14 lh-12 text-light-1 mt-5">Ages 0 - 17</div>
+            <div className="text-14 lh-12 text-light-1 mt-5">Ages 0 - 12</div>
           )}
         </div>
         {/* End .col-auto */}
@@ -61,8 +69,7 @@ const Counter = ({ name, defaultValue, onCounterChange }) => {
 const GuestSearch = () => {
   const [guestCounts, setGuestCounts] = useState({
     Adults: 2,
-    Children: 1,
-    Rooms: 1,
+    Children: 0
   });
   const handleCounterChange = (name, value) => {
     setGuestCounts((prevState) => ({ ...prevState, [name]: value }));

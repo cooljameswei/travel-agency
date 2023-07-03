@@ -4,10 +4,10 @@ const FilterTabsHotels3 = () => {
   const [filterOption, setFilterOption] = useState("hotel");
 
   const filterOptions = [
-    { label: "Hotel", value: "hotel" },
+    { label: "Location", value: "hotel" },
     { label: "Tour", value: "tour" },
     { label: "Activity", value: "activity" },
-    { label: " Holiday Rentals", value: "holiday_rentals" },
+    // { label: " Holiday Rentals", value: "holiday_rentals" },
     { label: "Car", value: "car" },
     { label: "Cruise", value: "cruise" },
     { label: "Flights", value: "flights" },
