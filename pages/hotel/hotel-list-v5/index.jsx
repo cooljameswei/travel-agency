@@ -2,10 +2,11 @@ import CallToActions from "../../../components/common/CallToActions";
 import Seo from "../../../components/common/Seo";
 import Header11 from "../../../components/header/header-11";
 import DefaultFooter from "../../../components/footer/default";
-import MainFilterSearchBox from "../../../components/hotel-list/hotel-list-v5/MainFilterSearchBox";
 import Pagination from "../../../components/hotel-list/common/Pagination";
 import HotelProperties from "../../../components/hotel-list/hotel-list-v5/HotelProperties";
 import DropdownSelelctBar from "../../../components/hotel-list/common/DropdownSelelctBar";
+import GuestSearch from "../../../components/hero/hero-5/GuestSearch";
+import LocationSearch from "../../../components/hero/hero-5/LocationSearch";
 
 const index = () => {
   return (
@@ -34,11 +35,34 @@ const index = () => {
             <div className="col-12">
               <div className="text-center">
                 <h1 className="text-30 fw-600 text-white">
-                  Find Your Dream Luxury Hotel
+                  Find Your Dream Luxury Location
                 </h1>
               </div>
               {/* End text-center */}
-              <MainFilterSearchBox />
+              <div className="tabs__content js-tabs-content">
+                <div className="mainSearch bg-white pr-20 py-20 lg:px-20 lg:pt-5 lg:pb-20 rounded-4">
+                  <div className="button-grid items-center">
+                    <LocationSearch />
+                    {/* End Location */}
+
+                    <GuestSearch />
+                    {/* End guest */}
+
+                    <div className="button-item">
+                      <button
+                        className="mainSearch__submit button -dark-1 py-15 px-35 h-60 col-12 rounded-4 bg-blue-1 text-white"
+                        onClick={() => Router.push("/destinations")}
+                      >
+                        <i className="icon-search text-20 mr-10" />
+                        Search
+                      </button>
+                    </div>
+                    {/* End search button_item */}
+                  </div>
+                </div>
+                {/* End .mainSearch */}
+              </div>
+              {/* End serarchbox tab-content */}
             </div>
             {/* End col-12 */}
           </div>
@@ -69,8 +93,7 @@ const index = () => {
 
             <div className="col-auto">
               <button className="button -blue-1 h-40 px-20 rounded-100 bg-blue-1-05 text-15 text-blue-1">
-                <i className="icon-up-down text-14 mr-10"></i>
-                Top picks for your search
+                <i className="icon-up-down text-14"></i>
               </button>
             </div>
             {/* End col-auto */}
