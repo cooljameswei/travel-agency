@@ -10,7 +10,7 @@ const Index = () => {
 
       <div className="container">
         <div className="row">
-          <div className="col-xl-9">
+          <div className="col-auto">
             <h1
               className="text-60 lg:text-40 md:text-30"
               data-aos="fade-up"
