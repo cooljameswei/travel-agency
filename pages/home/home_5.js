@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import Seo from "../../components/common/Seo";
 import Header5 from "../../components/header/header-5";
 import Hero5 from "../../components/hero/hero-5";
-import Footer4 from "../../components/footer/footer-4";
+import Footer4 from "../../components/footer/default";
 import Locations from "../../components/home/home-5/Locations";
 import CallToActions from "../../components/home/home-5/CallToActions";
 import Blog from "../../components/blog/Blog3";
@@ -12,13 +12,13 @@ import Counter3 from "../../components/counter/Counter3";
 import WhyChooseUs from "../../components/home/home-5/WhyChooseUs";
 import FilterHotelsTabs from "../../components/hotels/filter-tabs/FilterHotelsTabs";
 import FilterHotels from "../../components/hotels/FilterHotels";
-import TestimonialLeftCol from "../../components/home/home-1/TestimonialLeftCol";
-import Testimonial from "../../components/home/home-1/Testimonial";
+import TestimonialLeftCol from "../../components/home/home-5/TestimonialLeftCol";
+import Testimonial from "../../components/home/home-5/Testimonial";
 
 const home_5 = () => {
   return (
     <>
-      <Seo pageTitle="Home-5" />
+      <Seo pageTitle="Home" />
       {/* End Page Title */}
 
       <Header5 />

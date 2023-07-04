@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CallToActions from "../../../components/common/CallToActions";
 import Seo from "../../../components/common/Seo";
-import DefaultHeader from "../../../components/header/default-header";
+import DefaultHeader from "../../../components/header/header-5";
 import DefaultFooter from "../../../components/footer/default";
 import LocationTopBar from "../../../components/common/LocationTopBar";
 import RelatedBlog from "../../../components/blog/blog-details/RelatedBlog";
@@ -72,10 +72,6 @@ const BlogSingleDynamic = () => {
                 <BlogNavigator />
               </div>
               {/* End BlogNavigator */}
-
-              <h2 className="text-22 fw-500 mb-15 pt-30">Guest reviews</h2>
-              <Comments />
-              {/* End comments components */}
 
               <div className="border-top-light pt-40 mt-40" />
 

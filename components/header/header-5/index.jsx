@@ -34,12 +34,12 @@ const Header1 = () => {
                   </div>
                   {/* End mobile menu icon */}
 
-                  <button
+                  {/* <button
                     className="d-flex items-center icon-menu text-dark-1 text-20"
                     data-bs-toggle="offcanvas"
                     aria-controls="mobile-sidebar_menu"
                     data-bs-target="#mobile-sidebar_menu"
-                  ></button>
+                  ></button> */}
 
                   <div
                     className="offcanvas offcanvas-start  mobile_menu-contnet"

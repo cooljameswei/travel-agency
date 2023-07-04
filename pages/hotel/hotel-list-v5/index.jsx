@@ -1,6 +1,6 @@
 import CallToActions from "../../../components/common/CallToActions";
 import Seo from "../../../components/common/Seo";
-import Header11 from "../../../components/header/header-11";
+import Header11 from "../../../components/header/header-5";
 import DefaultFooter from "../../../components/footer/default";
 import Pagination from "../../../components/hotel-list/common/Pagination";
 import HotelProperties from "../../../components/hotel-list/hotel-list-v5/HotelProperties";
@@ -11,7 +11,7 @@ import LocationSearch from "../../../components/hero/hero-5/LocationSearch";
 const index = () => {
   return (
     <>
-      <Seo pageTitle="Hotel List v5" />
+      <Seo pageTitle="Destination" />
       {/* End Page Title */}
 
       <div className="header-margin"></div>
@@ -75,11 +75,6 @@ const index = () => {
           <div className="row y-gap-20 justify-between items-center">
             <div className="col-auto">
               <div className="row x-gap-20 y-gap-10 items-center">
-                <div className="col-auto">
-                  <div className="text-18 fw-500">Filter</div>
-                </div>
-                {/* End .col-auto */}
-
                 <div className="col-auto">
                   <div className="row x-gap-15 y-gap-15">
                     <DropdownSelelctBar />

@@ -11,9 +11,9 @@ const RatingTag = () => {
 
           <div className="col-auto">
             <h4 className="text-18 lh-15 fw-500">
-              This property is in high demand!
+              This Location is in high demand!
             </h4>
-            <div className="text-15 lh-15">7 travelers have booked today.</div>
+            <div className="text-15 lh-15">100+ travelers have booked today.</div>
           </div>
         </div>
       </div>
