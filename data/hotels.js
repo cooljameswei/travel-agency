@@ -52,7 +52,7 @@ export const hotelsData = [
     tag: "Breakfast Included",
     slideImg: ["/img/hotels/5.png"],
     img: "/img/hotels/5.png",
-    title: "Location",
+    title: "The Montcalm At Brewery London City",
     location: "Westminster Borough, London",
     ratings: "4.8",
     numberOfReviews: "3014",

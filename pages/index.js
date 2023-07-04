@@ -1,10 +1,10 @@
 import Wrapper from "./layout/wrapper";
-import Home5 from "./home/home_5";
+import Home1 from "./home/home_1";
 
 const MainRoot = () => {
   return (
     <Wrapper>
-      <Home5 />
+      <Home1 />
     </Wrapper>
   );
 };

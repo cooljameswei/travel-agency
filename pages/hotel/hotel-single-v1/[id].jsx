@@ -6,9 +6,10 @@ import "photoswipe/dist/photoswipe.css";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import { hotelsData } from "../../../data/hotels";
 import Seo from "../../../components/common/Seo";
-import Header11 from "../../../components/header/header-5";
+import Header11 from "../../../components/header/header-11";
 import Overview from "../../../components/hotel-single/Overview";
 import PopularFacilities from "../../../components/hotel-single/PopularFacilities";
+import PropertyHighlights from "../../../components/hotel-single/PropertyHighlights";
 import RatingTag from "../../../components/hotel-single/RatingTag";
 import StickyHeader from "../../../components/hotel-single/StickyHeader";
 import TopBreadCrumb from "../../../components/hotel-single/TopBreadCrumb";
@@ -26,11 +27,6 @@ import Faq from "../../../components/faq/Faq";
 import Hotels2 from "../../../components/hotels/Hotels2";
 import CallToActions from "../../../components/common/CallToActions";
 import DefaultFooter from "../../../components/footer/default";
-import Categories from "../../../components/destinations/components/Categories";
-import TestimonialLeftCol from "../../../components/home/home-1/TestimonialLeftCol";
-import Testimonial from "../../../components/home/home-1/Testimonial";
-import Blog1 from "../../../components/blog/Blog1";
-
 import Link from "next/link";
 
 const HotelSingleV1Dynamic = () => {
@@ -56,7 +52,7 @@ const HotelSingleV1Dynamic = () => {
         onClose={() => setOpen(false)}
       />
 
-      <Seo pageTitle="Locations" />
+      <Seo pageTitle="Hotel Single v1" />
       {/* End Page Title */}
 
       <div className="header-margin"></div>
@@ -94,17 +90,17 @@ const HotelSingleV1Dynamic = () => {
                 <div className="col-auto">
                   <div className="d-flex items-center text-15 text-light-1">
                     <i className="icon-location-2 text-16 mr-5" />
-                    United States
+                    {hotel?.location}
                   </div>
                 </div>
-                {/* <div className="col-auto">
+                <div className="col-auto">
                   <button
                     data-x-click="mapFilter"
                     className="text-blue-1 text-15 underline"
                   >
                     Show on map
                   </button>
-                </div> */}
+                </div>
               </div>
               {/* End .row */}
             </div>
@@ -113,11 +109,19 @@ const HotelSingleV1Dynamic = () => {
             <div className="col-auto">
               <div className="row x-gap-15 y-gap-15 items-center">
                 <div className="col-auto">
+                  <div className="text-14">
+                    From{" "}
+                    <span className="text-22 text-dark-1 fw-500">
+                      US${hotel?.price}
+                    </span>
+                  </div>
+                </div>
+                <div className="col-auto">
                   <Link
                     href="/hotel/booking-page"
                     className="button h-50 px-24 -dark-1 bg-blue-1 text-white"
                   >
-                    Reverse Location <div className="icon-arrow-top-right ml-15" />
+                    Select Room <div className="icon-arrow-top-right ml-15" />
                   </Link>
                 </div>
               </div>
@@ -154,7 +158,7 @@ const HotelSingleV1Dynamic = () => {
               </div>
               {/* End .galleryGrid__item */}
 
-              <div className="galleryGrid__item relative d-flex">
+              <div className="galleryGrid__item">
                 <Item
                   original="/img/gallery/1/2.png"
                   thumbnail="/img/gallery/1/2.png"
@@ -172,11 +176,6 @@ const HotelSingleV1Dynamic = () => {
                     />
                   )}
                 </Item>
-                <div className="absolute px-20 py-20 col-12 d-flex justify-end">
-                  <button className="button -blue-1 size-40 rounded-full flex-center bg-white text-dark-1">
-                    <i className="icon-heart text-16" />
-                  </button>
-                </div>
               </div>
               {/* End .galleryGrid__item */}
 
@@ -187,15 +186,19 @@ const HotelSingleV1Dynamic = () => {
                   className="rounded-4"
                   role="button"
                 />
-                <div className="absolute px-20 py-20 col-12 d-flex justify-end">
-                  <button className="button -blue-1 size-40 rounded-full flex-center bg-white text-dark-1">
-                    <i className="icon-heart text-16" />
-                  </button>
+                <div className="absolute h-full col-12 flex-center">
+                  <div
+                    className="button -blue-1 size-40 rounded-full flex-center bg-white text-dark-1 js-gallery"
+                    role="button"
+                    onClick={() => setOpen(true)}
+                  >
+                    <i className="icon-play text-16" />
+                  </div>
                 </div>
               </div>
               {/* End .galleryGrid__item */}
 
-              <div className="galleryGrid__item relative d-flex">
+              <div className="galleryGrid__item">
                 <Item
                   original="/img/gallery/1/4.png"
                   thumbnail="/img/gallery/1/4.png"
@@ -213,11 +216,6 @@ const HotelSingleV1Dynamic = () => {
                     />
                   )}
                 </Item>
-                <div className="absolute px-20 py-20 col-12 d-flex justify-end">
-                  <button className="button -blue-1 size-40 rounded-full flex-center bg-white text-dark-1">
-                    <i className="icon-heart text-16" />
-                  </button>
-                </div>
               </div>
               {/* End .galleryGrid__item */}
 
@@ -227,19 +225,29 @@ const HotelSingleV1Dynamic = () => {
                   alt="image"
                   className="rounded-4"
                 />
-                <div className="absolute px-20 py-20 col-12 d-flex justify-end">
-                  <button className="button -blue-1 size-40 rounded-full flex-center bg-white text-dark-1">
-                    <i className="icon-heart text-16" />
-                  </button>
+                <div className="absolute px-10 py-10 col-12 h-full d-flex justify-end items-end">
+                  <Item
+                    original="/img/gallery/1/5.png"
+                    thumbnail="/img/gallery/1/5.png"
+                    width={450}
+                    height={375}
+                  >
+                    {({ ref, open }) => (
+                      <div
+                        className="button -blue-1 px-24 py-15 bg-white text-dark-1 js-gallery"
+                        ref={ref}
+                        onClick={open}
+                        role="button"
+                      >
+                        See All Photos
+                      </div>
+                    )}
+                  </Item>
                 </div>
               </div>
               {/* End .galleryGrid__item */}
             </div>
           </Gallery>
-          <div className="row x-gap-20 y-gap-20 items-center pt-20 item_gap-x10">
-            <Categories />
-          </div>
-          {/* End .row */}
         </div>
         {/* End .container */}
       </section>
@@ -250,11 +258,26 @@ const HotelSingleV1Dynamic = () => {
           <div className="row y-gap-30">
             <div className="col-xl-8">
               <div className="row y-gap-40">
+                <div className="col-12">
+                  <h3 className="text-22 fw-500">Property highlights</h3>
+                  <PropertyHighlights />
+                </div>
+                {/* End .col-12 Property highlights */}
 
                 <div id="overview" className="col-12">
                   <Overview />
                 </div>
                 {/* End .col-12  Overview */}
+
+                <div className="col-12">
+                  <h3 className="text-22 fw-500 pt-40 border-top-light">
+                    Most Popular Facilities
+                  </h3>
+                  <div className="row y-gap-10 pt-20">
+                    <PopularFacilities />
+                  </div>
+                </div>
+                {/* End .col-12 Most Popular Facilities */}
 
                 <div className="col-12">
                   <RatingTag />
@@ -280,7 +303,7 @@ const HotelSingleV1Dynamic = () => {
         <div className="container">
           <div className="row pb-20">
             <div className="col-auto">
-              <h3 className="text-22 fw-500">Activities</h3>
+              <h3 className="text-22 fw-500">Available Rooms</h3>
             </div>
           </div>
           {/* End .row */}
@@ -294,7 +317,7 @@ const HotelSingleV1Dynamic = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h3 className="text-22 fw-500">Tours</h3>
+              <h3 className="text-22 fw-500">Guest reviews</h3>
             </div>
           </div>
           {/* End .row */}
@@ -346,6 +369,24 @@ const HotelSingleV1Dynamic = () => {
       </section>
       {/* End Reply Comment box section */}
 
+      <section className="mt-40" id="facilities">
+        <div className="container">
+          <div className="row x-gap-40 y-gap-40">
+            <div className="col-12">
+              <h3 className="text-22 fw-500">Facilities of this Hotel</h3>
+              <div className="row x-gap-40 y-gap-40 pt-20">
+                <Facilities />
+              </div>
+              {/* End .row */}
+            </div>
+            {/* End .col-12 */}
+          </div>
+          {/* End .row */}
+        </div>
+        {/* End .container */}
+      </section>
+      {/* End facilites section */}
+
       <section className="pt-40">
         <div className="container">
           <div className="row">
@@ -357,15 +398,19 @@ const HotelSingleV1Dynamic = () => {
                       <Image
                         width={30}
                         height={30}
-                        src="/img/icons/icon.png"
+                        src="/img/icons/health.svg"
                         alt="icon"
                       />
                     </div>
                   </div>
                   <div className="col-auto">
                     <h4 className="text-18 lh-15 fw-500">
-                      Best time to visit
+                      Extra health &amp; safety measures
                     </h4>
+                    <div className="text-15 lh-15">
+                      This property has taken extra health and hygiene measures
+                      to ensure that your safety is their priority
+                    </div>
                   </div>
                 </div>
               </div>
@@ -375,19 +420,44 @@ const HotelSingleV1Dynamic = () => {
       </section>
       {/* End health &  safety measures section */}
 
-      {/* <section className="pt-40">
+      <section className="pt-40">
         <div className="container">
           <div className="row">
             <div className="col-12">
               <h3 className="text-22 fw-500">Hotel surroundings</h3>
             </div>
           </div>
+          {/* End .row */}
 
           <div className="row x-gap-50 y-gap-30 pt-20">
             <Surroundings />
           </div>
+          {/* End .row */}
         </div>
-      </section> */}
+        {/* End .container */}
+      </section>
+      {/* End hotel surroundings */}
+
+      <section className="pt-40">
+        <div className="container">
+          <div className="pt-40 border-top-light">
+            <div className="row">
+              <div className="col-12">
+                <h3 className="text-22 fw-500">Some helpful facts</h3>
+              </div>
+            </div>
+            {/* End .row */}
+
+            <div className="row x-gap-50 y-gap-30 pt-20">
+              <HelpfulFacts />
+            </div>
+            {/* End .row */}
+          </div>
+          {/* End .pt-40 */}
+        </div>
+        {/* End .container */}
+      </section>
+      {/* End helpful facts surroundings */}
 
       <section id="faq" className="pt-40 layout-pb-md">
         <div className="container">
@@ -396,7 +466,7 @@ const HotelSingleV1Dynamic = () => {
               <div className="col-lg-4">
                 <h2 className="text-22 fw-500">
                   FAQs about
-                  <br /> Voyagescope complimentary vacation program
+                  <br /> The Crown Hotel
                 </h2>
               </div>
               {/* End .row */}
@@ -416,37 +486,13 @@ const HotelSingleV1Dynamic = () => {
       </section>
       {/* End Faq about sections */}
 
-      <section className="layout-pt-lg layout-pb-lg bg-blue-2">
-        <div className="container">
-          <div className="row y-gap-40 justify-between">
-            <div className="col-xl-5 col-lg-6" data-aos="fade-up">
-              <TestimonialLeftCol />
-            </div>
-            {/* End col */}
-
-            <div className="col-lg-6">
-              <div
-                className="overflow-hidden js-testimonials-slider-3"
-                data-aos="fade-up"
-                data-aos-delay="50"
-              >
-                <Testimonial />
-              </div>
-            </div>
-          </div>
-          {/* End .row */}
-        </div>
-        {/* End container */}
-      </section>
-      {/* End testimonial Section */}
-
       <section className="layout-pt-md layout-pb-lg">
         <div className="container">
           <div className="row justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">
-                  Other luxury locations to choose from
+                  Popular properties similar to The Crown Hotel
                 </h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
                   Interdum et malesuada fames ac ante ipsum
@@ -466,22 +512,6 @@ const HotelSingleV1Dynamic = () => {
         {/* End .container */}
       </section>
       {/* End similar hotel */}
-
-      <section className="layout-pt-md layout-pb-lg">
-        <div className="container">
-          <div className="row justify-center text-center">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Travel articles</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Lorem ipsum is placeholder text commonly used in site.
-                </p>
-              </div>
-            </div>
-          </div>
-          <Blog1 />
-        </div>
-      </section>
 
       <CallToActions />
       {/* End Call To Actions Section */}
