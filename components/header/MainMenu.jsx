@@ -25,28 +25,28 @@ const MainMenu = ({ style = "" }) => {
             isActiveParentChaild(homeItems, router.asPath) ? "current" : ""
           } menu-item-has-children`}
         >
-          <a href="/">
+          <Link href="/">
             <span className="mr-10">Home</span>
-          </a>
+          </Link>
         </li>
         {/* End home page menu */}
 
         <li className="menu-item-has-children -has-mega-menu">
-          <a href="/hotel/hotel-list-v5">
+          <Link href="/hotel/hotel-list-v5">
             <span className="mr-10">Destination</span>
-          </a>
+          </Link>
         </li>
 
         <li className="menu-item-has-children -has-mega-menu">
-          <a href="/hotel/hotel-single-v1/5">
+          <Link href="/hotel/hotel-single-v1/5">
             <span className="mr-10">Locations</span>
-          </a>
+          </Link>
         </li>
 
         <li className="menu-item-has-children -has-mega-menu">
-          <a href="/blog/blog-details/1">
+          <Link href="/blog/blog-details/1">
             <span className="mr-10">Blog</span>
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

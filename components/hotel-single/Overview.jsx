@@ -17,7 +17,7 @@ const Overview = () => {
         Adjacent to the living/dining room is a small kitchen equipped with 2 hot plates and an oven. While it may be compact in size, it offers everything you need to prepare meals during your stay. Feel free to make use of these amenities to enjoy home-cooked dishes or quick snacks.
         <br />
         <br />
-        Our listing aims to provide comprehensive information about the property to ensure transparency and facilitate your decision-making process. We want you to have all the necessary details at hand when considering booking with us. If you have any specific questions or concerns, please don't hesitate to reach out to us.
+        Our listing aims to provide comprehensive information about the property to ensure transparency and facilitate your decision-making process. We want you to have all the necessary details at hand when considering booking with us. If you have any specific questions or concerns, please don &apos; t hesitate to reach out to us.
         <br />
         <br />
         By offering the best available price and already including discounts, we strive to provide you with the most competitive offer for your desired travel dates. We value your time and want to make your booking experience as straightforward as possible. Simply check for availability and take advantage of our already discounted rates.
